@@ -9,5 +9,8 @@
     "start:client": "cd client && npm start"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^5.1.0"
+  }
 }
