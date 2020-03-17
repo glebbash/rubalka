@@ -1,25 +1,24 @@
-import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom';
 import './App.css';
-import Home from './pages/Home';
-import List from './pages/List';
+import React from 'react';
+import { Route, Switch } from 'react-router-dom';
+import { HomePage } from './pages/HomePage';
+import { CategoryPage } from './pages/CategoryPage';
+import { ProductPage } from './pages/ProductPage';
+import { Header } from './components/Header';
 
-class App extends Component {
-  render() {
-    const App = () => (
-      <div>
-        <Switch>
-          <Route exact path='/' component={Home}/>
-          <Route path='/list' component={List}/>
-        </Switch>
-      </div>
-    )
-    return (
-      <Switch>
-        <App/>
-      </Switch>
-    );
-  }
-}
-
-export default App;
+export function App() {
+	return (
+		<div className="fh">
+			<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></link>
+			<div className="App">
+				<Header />
+				<Switch>
+					<Route exact path='/' component={HomePage} />
+					<Route path='/category/:id' component={CategoryPage} />
+					<Route path='/search' component={CategoryPage} />
+					<Route path='/product/:id' component={ProductPage} />
+				</Switch>
+			</div>
+		</div>
+	);
+};
