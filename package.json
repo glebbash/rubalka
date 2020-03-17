@@ -3,16 +3,13 @@
   "version": "1.0.0",
   "description": "Fullstack",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "concurrently 'npm run start:server' 'npm run start:client'",
-    "start:server": "cd server && npm start",
-    "start:client": "cd client && npm start"
+    "start": "cd server && npm start",
+    "heroku-postbuild": "cd server && npm install && cd ../client && npm install && npm run build",
+    "dev": "concurrently 'cd server && npm run start:dev' 'cd client && npm start'"
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "concurrently": "^5.1.0",
-    "ts-node": "8.6.2",
-    "typescript": "3.4.3"
+  "dev-dependencies": {
+    "concurrently": "^5.1.0"
   }
 }
